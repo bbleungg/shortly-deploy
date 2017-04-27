@@ -95,6 +95,15 @@ module.exports = function(grunt) {
           message: 'Update repository'
         }
       }
+    },
+
+    gitpush: {
+      task: {
+        options: {
+          remote: 'live',
+          branch: 'master'
+        }
+      }
     }
   });
 
@@ -143,6 +152,6 @@ module.exports = function(grunt) {
     'upload'
   ]);
 
-  grunt.registerTask('git', ['gitadd', 'gitcommit']);
+  grunt.registerTask('git', ['gitadd', 'gitcommit', 'gitpush']);
 
 };
