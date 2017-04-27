@@ -6,8 +6,12 @@ module.exports = function(grunt) {
       options: {
         separator: ';',
       },
+      lib: {
+        src: ['public/lib/**/*.js'],
+        dest: 'public/dist/lib.js'
+      },
       dist: {
-        src: ['public/lib/**/*.js', 'public/client/**/*.js'],
+        src: ['public/client/**/*.js'],
         dest: 'public/dist/build.js',
       },
     },
@@ -30,7 +34,8 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'public/dist/build.min.js': ['public/dist/build.js']
+          'public/dist/build.min.js': ['public/dist/build.js'],
+          'public/dist/lib.min.js': ['public/dist/lib.js']
         }
       }
     },
